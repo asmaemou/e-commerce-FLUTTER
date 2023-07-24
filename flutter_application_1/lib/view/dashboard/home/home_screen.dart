@@ -2,16 +2,13 @@ import 'package:flutter/material.dart';
 import '../../../component/main_header.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key ? key}): super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        children: [
-          MainHeader()
-        ],
-      )
-      );
+    return const SafeArea(
+        child: Column(
+      children: [MainHeader()],
+    ));
   }
 }

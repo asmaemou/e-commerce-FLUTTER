@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import '../../controller/dashboard_controller.dart';
 import 'package:get/get.dart';
+import 'home/home_screen.dart';
 
 class DashboardScreen extends StatelessWidget{
   const DashboardScreen({Key?key}):super(key: key);
