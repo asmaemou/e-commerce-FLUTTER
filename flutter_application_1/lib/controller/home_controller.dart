@@ -1,7 +1,7 @@
+import 'package:get/get.dart';
 import 'package:flutter_application_1/model/ad_banner.dart';
 import 'package:flutter_application_1/service/remote_service/remote_banner_service.dart';
-import 'package:get/get.dart';
-// import 'adBannerListFromJson.dart';
+import 'package:logger/logger.dart';
 
 class HomeController extends GetxController {
   static HomeController instance = Get.find();
@@ -19,10 +19,12 @@ class HomeController extends GetxController {
       isBannerLoading(true);
       var result = await RemoteBannerService().get();
       if (result != null) {
-        bannerList.assignAll(adBannerListFromJson(result.body));
+        var logger = Logger();
+        logger.i('ggggggggppppppopoogoog');
+        logger.i(result.body);
+        bannerList.assignAll(AdBannersListFromJson(result.body));
       }
     } finally {
-      // print(bannerList.first.image);
       isBannerLoading(false);
     }
   }
