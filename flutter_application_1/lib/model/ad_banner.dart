@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'dart:convert';
 
 List<AdBanner> AdBannersListFromJson(String val) => List<AdBanner>.from(
