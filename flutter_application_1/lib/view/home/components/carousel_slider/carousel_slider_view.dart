@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_application_1/model/ad_banner.dart';
 import 'banner_card.dart';
+import 'package:logger/logger.dart';
 
 class CarouselSliderView extends StatefulWidget {
   final List<AdBanner> bannerList;
@@ -21,6 +22,9 @@ class _CarouselSliderViewState extends State<CarouselSliderView> {
     _bannerList =
         widget.bannerList.map((e) =>
             BannerCard(imageUrl: e.image)).toList();
+    var logger = Logger();
+    logger.i('ayouuuuuuuuuuuuuuuuub');
+    logger.i(_bannerList);
     super.initState();
   }
 

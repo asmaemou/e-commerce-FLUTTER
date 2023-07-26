@@ -1,14 +1,17 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'dart:convert';
+import 'package:logger/logger.dart';
+
 
 List<AdBanner> AdBannersListFromJson(String val) => List<AdBanner>.from(
+  
   json.decode(val)['data'].map((banner) => AdBanner.fromJson(banner))
 );
 class AdBanner{
   final int id;
   final String image;
-  final String populate;
+  final bool populate;
 
   AdBanner({
     required this.id,
