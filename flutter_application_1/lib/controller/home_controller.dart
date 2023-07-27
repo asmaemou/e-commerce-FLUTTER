@@ -8,6 +8,8 @@ class HomeController extends GetxController {
   RxList<AdBanner> bannerList = List<AdBanner>.empty(growable: true).obs;
   RxBool isBannerLoading = false.obs;
 
+  get popularCategoryList => null;
+
   @override
   void onInit() {
     getAdBanners();

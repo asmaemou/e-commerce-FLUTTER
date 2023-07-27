@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/view/home/components/popular_category/popular_category_loading.dart';
 import 'package:get/get.dart';
 import 'package:flutter_application_1/component/main_header.dart';
 import 'package:flutter_application_1/controller/controllers.dart';
@@ -22,7 +23,14 @@ class HomeScreen extends StatelessWidget {
           } else {
             return const CarouselLoading();
           }
-        })
+        }),
+        Obx(() {
+          if (homeController.popularCategoryList.isNotEmpty) {
+            return const PopularCategoryLoading();
+          } else {
+            return const CarouselLoading();
+          }
+        }),
       ],
     ));
   }

@@ -1,7 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'dart:convert';
-import 'package:logger/logger.dart';
+// import 'package:logger/logger.dart';
 
 
 List<AdBanner> AdBannersListFromJson(String val) => List<AdBanner>.from(
