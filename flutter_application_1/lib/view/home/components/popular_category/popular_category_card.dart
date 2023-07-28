@@ -12,9 +12,10 @@ class PopularCategoryCard extends StatelessWidget {
 @override
   Widget build(BuildContext context) {
      return Padding(
-      padding: EdgeInsets.fromLTRB(10, 10, 5, 10),
-      child: CachedNetworkImage(
+      padding: const EdgeInsets.fromLTRB(10, 10, 5, 10),
+      child:   CachedNetworkImage(
         // imageUrl: baseUrl + category.image,
+        imageUrl:'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hawksviewgolfclub.com%2Fgolf-course%2F&psig=AOvVaw2GYEzwZ9BauHDm1ZEHCo-b&ust=1690630059179000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPDMivOlsYADFQAAAAAdAAAAABAE',
         imageBuilder: (context, imageProvider) => Material(
           elevation: 8,
           shadowColor: Colors.grey.shade300,
@@ -27,11 +28,12 @@ class PopularCategoryCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               image: DecorationImage(image: imageProvider, fit: BoxFit.cover)
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(10),
+            child: const Padding(
+              padding: EdgeInsets.all(10),
               child: Text(
-                category.name,
-                style: const TextStyle(
+                // category.name,
+                "Name",
+                style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.white
