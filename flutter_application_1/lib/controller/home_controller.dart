@@ -10,6 +10,7 @@ import '../service/local_service/local_category_service.dart';
 class HomeController extends GetxController {
   static HomeController instance = Get.find();
   RxList<AdBanner> bannerList = List<AdBanner>.empty(growable: true).obs;
+  // RxList<Category> popularCategoryList = List<Category>.empty(growable: true).obs;
   RxBool isBannerLoading = false.obs;
   RxBool isPopularCategoryLoading = false.obs;
   final LocalCategoryService _localCategoryService = LocalCategoryService();
@@ -21,6 +22,7 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     getAdBanners();
+    getPopularCategories();
     super.onInit();
   }
 
@@ -29,11 +31,11 @@ class HomeController extends GetxController {
       isBannerLoading(true);
       var result = await RemoteBannerService().get();
       if (result != null) {
-        var logger = Logger();
-        logger.i('ggggggggppppppopoogoog');
-        logger.i(result.body);
+        // var logger = Logger();
+        // logger.i('ggggggggppppppopoogoog');
+        // logger.i(result.body);
         bannerList.assignAll(AdBannersListFromJson(result.body));
-        logger.i('salalalalalalala');
+        // logger.i('salalalalalalala');
       }
     } finally {
       isBannerLoading(false);
@@ -49,13 +51,15 @@ class HomeController extends GetxController {
       // }
       var result = await RemotePopularCategoryService().get();
       if (result != null) {
+        // popularCategoryList.assignAll(popularCategoryListFromJson(result.body));
+        // _localCategoryService.assignAllPopularCategories(
+        //     popularCategories: popularCategoryListFromJson(result.body));
         popularCategoryList.assignAll(popularCategoryListFromJson(result.body));
-        _localCategoryService.assignAllPopularCategories(
-            popularCategories: popularCategoryListFromJson(result.body));
       }
     } finally {
       isPopularCategoryLoading(false);
     }
+
 
   }
 

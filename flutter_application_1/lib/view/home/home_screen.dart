@@ -8,6 +8,8 @@ import 'components/carousel_slider/carousel_slider_view.dart';
 import 'components/popular_category/popular_category_loading.dart';
 import 'components/carousel_slider/carousel_loading.dart';
 
+import 'package:logger/logger.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -26,6 +28,11 @@ class HomeScreen extends StatelessWidget {
         }),
         const SectionTitle(title: "Popular Category"),
         Obx(() {
+           var logger = Logger();
+            logger.i('hhhhhhhhhhhhhhhhhhhhh');
+            
+            logger.i(homeController.popularCategoryList);
+            logger.i('hhhhhhhhhhhhhhhhhhhhh2');
           if (homeController.popularCategoryList.isNotEmpty) {
             return PopularCategory(
                 categories: homeController.popularCategoryList
