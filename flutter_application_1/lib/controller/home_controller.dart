@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter_application_1/model/ad_banner.dart';
 import 'package:flutter_application_1/model/category.dart';
+import 'package:flutter_application_1/model/product.dart';
 import 'package:flutter_application_1/service/remote_service/remote_banner_service.dart';
 import 'package:flutter_application_1/service/remote_service/remote_popular_category_service.dart';
 
@@ -16,6 +17,10 @@ class HomeController extends GetxController {
   final LocalCategoryService _localCategoryService = LocalCategoryService();
   
   RxList<Category> popularCategoryList = List<Category>.empty(growable: true).obs;
+  // RxList<Category> popularProductList = List<Category>.empty(growable: true).obs;
+    RxList<Product> popularProductList = List<Product>.empty(growable: true).obs;
+
+
 
 
 
