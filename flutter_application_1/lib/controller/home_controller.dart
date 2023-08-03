@@ -4,7 +4,7 @@ import 'package:flutter_application_1/model/category.dart';
 import 'package:flutter_application_1/service/remote_service/remote_banner_service.dart';
 import 'package:flutter_application_1/service/remote_service/remote_popular_category_service.dart';
 
-import 'package:logger/logger.dart';
+// import 'package:logger/logger.dart';
 import '../service/local_service/local_category_service.dart';
 
 class HomeController extends GetxController {

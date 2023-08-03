@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_application_1/model/category.dart';
-import 'package:flutter_application_1/view/home/components/popular_category/popular_category_card.dart';
+import 'package:flutter_application_1/model/category.dart';
+
+import 'popular_category_card.dart';
 
 class PopularCategory extends StatelessWidget {
-  // final List<Category> categories;
-  final List<dynamic>? categories;
+  final List<Category> categories;
   const PopularCategory({Key? key,
     required this.categories
   }) : super(key: key);
@@ -17,9 +17,9 @@ class PopularCategory extends StatelessWidget {
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           physics: const BouncingScrollPhysics(),
-          itemCount: categories!.length,
+          itemCount: categories.length,
           itemBuilder: (context, index) => PopularCategoryCard(
-              category: categories![index]
+              category: categories[index]
           )
       ),
     );
