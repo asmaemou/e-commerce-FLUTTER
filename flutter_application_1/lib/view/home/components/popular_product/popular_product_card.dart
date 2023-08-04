@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/const.dart';
+// import 'package:flutter_application_1/const.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../../../model/product.dart';
@@ -26,7 +26,8 @@ class PopularProductCard extends StatelessWidget {
               AspectRatio(
                 aspectRatio: 0.9,
                 child: CachedNetworkImage(
-                  imageUrl: baseUrl+product.images.first,
+                  imageUrl: product.image,//imageUrl: baseUrl+product.images.first,
+
                   placeholder: (context, url) => Shimmer.fromColors(
                     highlightColor: Colors.white,
                     baseColor: Colors.grey.shade300,
@@ -50,7 +51,7 @@ class PopularProductCard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 10, bottom: 10),
                 child: Text(
-                  product.name,
+                  product.libelle,
                   style: const TextStyle(
                     color: Colors.black,
                     fontSize: 14

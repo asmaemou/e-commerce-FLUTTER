@@ -3,7 +3,10 @@ import 'package:flutter_application_1/route/app_page.dart';
 import 'package:flutter_application_1/route/app_route.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
 import 'package:get/get.dart';
-void main() {
+import 'package:hive_flutter/hive_flutter.dart';
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
   runApp(const MyApp());
 }
 

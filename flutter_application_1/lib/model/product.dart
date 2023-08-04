@@ -7,22 +7,23 @@ List<Product> popularProductListFromJson(String val) =>
 
 class Product {
   final int id;
-  final String name;
+  final String libelle;
   final String description;
-  final List<String> images;
+  // final List<String> images;
+  final String image;
 
   Product(
       {required this.id,
-      required this.name,
+      required this.libelle,
       required this.description,
-      required this.images});
+      required this.image});
 
   factory Product.popularProductFromJson(Map<String, dynamic> data) => Product(
       id: data['id'],
-      name: data['attributes']['product']['data']['attributes']['name'],
-      description: data['attributes']['product']['data']['attributes']
-          ['description'],
-      images: List<String>.from(data['attributes']['product']['data']
-              ['attributes']['images']['data']
-          .map((image) => image['attributes']['url'])));
+      libelle: data['libelle'],
+      description: data['description'],
+      // images: List<String>.from(data['image']
+      //     .map((image) => image['attributes']['url']))
+      image: data['image_url']
+      );
 }
