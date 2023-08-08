@@ -15,7 +15,7 @@ class BannerCard extends StatelessWidget {
       child: ClipRRect(
         borderRadius: const BorderRadius.all(Radius.circular(10)),
         child: CachedNetworkImage(
-            imageUrl: imageUrl,
+            imageUrl: "data/png;base64,$imageUrl",
           progressIndicatorBuilder: (context, url, downloadProgress) =>
               Shimmer.fromColors(
                 highlightColor: Colors.white,
