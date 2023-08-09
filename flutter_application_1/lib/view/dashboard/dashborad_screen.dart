@@ -4,6 +4,8 @@ import '../../controller/dashboard_controller.dart';
 import 'package:get/get.dart';
 import '../home/home_screen.dart';
 
+import '../home/product/product_screen.dart';
+
 class DashboardScreen extends StatelessWidget{
   const DashboardScreen({Key?key}):super(key: key);
   @override
@@ -15,9 +17,7 @@ class DashboardScreen extends StatelessWidget{
             index: controller.tabIndex,
             children: [
               const HomeScreen(),
-              Container(
-                color: Colors.red,
-              ),
+              const ProductScreen(),
               Container(
                 color: Colors.blue,
               ),
