@@ -22,9 +22,9 @@ class _CarouselSliderViewState extends State<CarouselSliderView> {
     _bannerList =
         widget.bannerList.map((e) =>
             BannerCard(imageUrl: e.image)).toList();
-    var logger = Logger();
-    logger.i('ayouuuuuuuuuuuuuuuuub');
-    logger.i(_bannerList);
+    // var logger = Logger();
+    // logger.i('ayouuuuuuuuuuuuuuuuub');
+    // logger.i(_bannerList);
     super.initState();
   }
 
