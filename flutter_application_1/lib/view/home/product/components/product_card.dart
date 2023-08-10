@@ -1,10 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/const.dart';
+import 'package:flutter_application_1/model/product.dart';
+import 'package:flutter_application_1/view/home/product/product_details/product_details_screen.dart';
 import 'package:shimmer/shimmer.dart';
-
-import '../../../model/product.dart';
-import '../../product_details/product_details_screen.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -64,17 +63,17 @@ class ProductCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      product.name,
+                      product.libelle,
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
                           color: Theme.of(context).primaryColor),
                     ),
                     const SizedBox(height: 5),
-                    Text(
-                      '\$${product.tags.first.price.toStringAsFixed(2)}',
-                      style: const TextStyle(fontSize: 12, color: Colors.grey),
-                    ),
+                    // Text(
+                    //   '\$${product.tags.first.price.toStringAsFixed(2)}',
+                    //   style: const TextStyle(fontSize: 12, color: Colors.grey),
+                    // ),
                   ],
                 ),
               )
