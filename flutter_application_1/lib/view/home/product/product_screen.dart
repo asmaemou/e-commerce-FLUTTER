@@ -27,7 +27,7 @@ class ProductScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset('assets/product_not_found.png'),
+                      Image.asset('product_not_found.png'),
                       const SizedBox(height: 10),
                       const Text('Products Not Found!')
                     ],

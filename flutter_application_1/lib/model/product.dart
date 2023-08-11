@@ -4,7 +4,7 @@ import 'tag.dart';
 
 List<Product> popularProductListFromJson(String val) =>
     List<Product>.from(json.decode(val)['data']
-        .map((category) => Product.popularProductFromJson(category))
+        .map((product) => Product.popularProductFromJson(product))
     );
 
 List<Product> productListFromJson(String val) =>
@@ -16,9 +16,10 @@ class Product {
   final int id;
   final String libelle;
   final String description;
+  final String image;
   final List<String> images;
   final List<Tag> tags;
-  final String image;
+  
 
   Product(
       {required this.id,
@@ -48,8 +49,11 @@ factory Product.productFromJson(Map<String, dynamic> data) => Product(
       description: data['description'],
       libelle: data['libelle'],
       image: data['image_url'],
-      images: List<String>.from(data['images']['data']
-          .map((image) => image['attributes']['url'])),
-      tags: List<Tag>.from(data['tags']['data'].map((val) => Tag.fromJson(val)))
+      images: List<String>.from(data['images']
+          .map((image) => image['url'])),
+      tags: List<Tag>.from(data['tags'].map((val) => Tag.fromJson(val)))
+      // Product.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+
+      // tags: []
   );
 }

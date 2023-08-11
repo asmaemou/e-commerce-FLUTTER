@@ -3,7 +3,7 @@ import 'package:flutter_application_1/const.dart';
 
 class RemoteProductService {
   var client = http.Client();
-  var remoteUrl = '$baseUrl/api/products';
+  var remoteUrl = '$baseUrl/product_product';
   
   Future<dynamic> get() async {
     var response = await client.get(
