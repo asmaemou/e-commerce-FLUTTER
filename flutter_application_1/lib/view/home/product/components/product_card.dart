@@ -37,8 +37,9 @@ class ProductCard extends StatelessWidget {
                     tag: product.images.first,
                     // tag: product.libelle,
                     child: CachedNetworkImage(
-                      imageUrl: baseUrl + product.images.first,
+                      // imageUrl: baseUrl + product.images.first,
                       // imageUrl: baseUrl + product.image,
+                      imageUrl: "data:image/png;base64,${product.image}",
                       placeholder: (context, url) => Shimmer.fromColors(
                         highlightColor: Colors.white,
                         baseColor: Colors.grey.shade300,
