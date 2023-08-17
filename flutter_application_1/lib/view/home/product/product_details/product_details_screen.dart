@@ -116,25 +116,26 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             color: Colors.grey.shade800,
                           ),
                         ),
-                        Text(
-                          widget.product.tags[_tagIndex].title,
-                          style: TextStyle(
-                              fontSize: 18, color: Colors.grey.shade800),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            if (_tagIndex != (widget.product.tags.length - 1)) {
-                              setState(() {
-                                _tagIndex++;
-                              });
-                            }
-                          },
-                          child: Icon(
-                            Icons.keyboard_arrow_right_sharp,
-                            size: 32,
-                            color: Colors.grey.shade800,
-                          ),
-                        )
+                        // Text(
+                        //   widget.product.tags[_tagIndex].title,
+                        //   style: TextStyle(
+                        //       fontSize: 18, color: Colors.grey.shade800),
+                        // ),
+                        // InkWell(
+                        //   onTap: () {
+                        //     if (_tagIndex != (widget.product.tags.length - 1)) {
+                        //       setState(() {
+                        //         _tagIndex++;
+                        //       });
+                        //     }
+                        //   }
+                        //   ,
+                        //   child: Icon(
+                        //     Icons.keyboard_arrow_right_sharp,
+                        //     size: 32,
+                        //     color: Colors.grey.shade800,
+                        //   ),
+                        // )
                       ],
                     ),
                   )

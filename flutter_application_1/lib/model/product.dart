@@ -18,7 +18,8 @@ class Product {
   final String description;
   final String image;
   final List<String> images;
-  final List<Tag> tags;
+  final double price;
+  // final List<Tag> tags;
   
 
   Product(
@@ -27,7 +28,8 @@ class Product {
       required this.description,
       required this.image,
       required this.images,
-      required this.tags
+      required this.price,
+      // required this.tags
       
       });
 
@@ -39,7 +41,8 @@ class Product {
       //     .map((image) => image['attributes']['url']))
       image: data['image_url'],
       images: [],
-      tags: []
+      price: 12,
+      // tags: []
       
       );
 
@@ -49,9 +52,9 @@ factory Product.productFromJson(Map<String, dynamic> data) => Product(
       description: data['description'],
       libelle: data['libelle'],
       image: data['image_url'],
-      images: List<String>.from(data['images']
-          .map((image) => image['url'])),
-      tags: List<Tag>.from(data['tags'].map((val) => Tag.fromJson(val)))
+      price: data['price'],
+      images: List<String>.from(data['images'].map((image) => image['url'])),
+      // tags: List<Tag>.from(data['tags'].map((val) => Tag.fromJson(val)))
       // Product.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
 
       // tags: []
