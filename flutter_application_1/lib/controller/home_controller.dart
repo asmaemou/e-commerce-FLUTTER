@@ -7,7 +7,7 @@ import 'package:flutter_application_1/service/remote_service/remote_popular_cate
 import 'package:flutter_application_1/service/remote_service/remote_popular_product_service.dart';
 
 // import 'package:logger/logger.dart';
-import '../service/local_service/local_category_service.dart';
+// import '../service/local_service/local_category_service.dart';
 
 class HomeController extends GetxController {
   static HomeController instance = Get.find();
@@ -16,7 +16,7 @@ class HomeController extends GetxController {
   RxBool isBannerLoading = false.obs;
   RxBool isPopularCategoryLoading = false.obs;
   RxBool isPopularProductLoading = false.obs;
-  final LocalCategoryService _localCategoryService = LocalCategoryService();
+  // final LocalCategoryService _localCategoryService = LocalCategoryService();
   
   RxList<Category> popularCategoryList = List<Category>.empty(growable: true).obs;
   // RxList<Category> popularProductList = List<Category>.empty(growable: true).obs;

@@ -32,6 +32,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
                 widget.product.libelle,
+                // widget.product.name,
                 style: TextStyle(
                     fontSize: 24,
                     color: Theme.of(context).primaryColor,
@@ -41,7 +42,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             // Padding(
             //   padding: const EdgeInsets.symmetric(horizontal: 10),
             //   child: Text(
-            //     '\$${widget.product.tags.first.price.toStringAsFixed(2)}',
+            //     '\$${widget.product.price.toStringAsFixed(2)}',
             //     style: TextStyle(
             //         fontSize: 18,
             //         color: Theme.of(context).primaryColor,

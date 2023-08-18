@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/view/category/category_screen.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import '../../controller/dashboard_controller.dart';
 import 'package:get/get.dart';
@@ -18,6 +19,7 @@ class DashboardScreen extends StatelessWidget{
             children: [
               const HomeScreen(),
               const ProductScreen(),
+              const CategoryScreen(),
               Container(
                 color: Colors.blue,
               ),
