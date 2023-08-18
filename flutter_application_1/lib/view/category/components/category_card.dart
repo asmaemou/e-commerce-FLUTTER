@@ -28,7 +28,7 @@ class _CategoryCardState extends State<CategoryCard> {
           });
         },
         child: CachedNetworkImage(
-          imageUrl: baseUrl + widget.category.image,
+          imageUrl: "data:image/png;base64,${widget.category.image}",//imageURL way to write
           imageBuilder: (context, imageProvider) => Material(
             elevation: 8,
             shadowColor: Colors.grey.shade300,
