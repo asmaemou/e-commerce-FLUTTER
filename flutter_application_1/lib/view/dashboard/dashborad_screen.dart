@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import '../home/home_screen.dart';
 
 import '../home/product/product_screen.dart';
+import '../account/account_screen.dart';
 
 class DashboardScreen extends StatelessWidget{
   const DashboardScreen({Key?key}):super(key: key);
@@ -20,9 +21,10 @@ class DashboardScreen extends StatelessWidget{
               const HomeScreen(),
               const ProductScreen(),
               const CategoryScreen(),
-              Container(
-                color: Colors.blue,
-              ),
+              const AccountScreen(),
+              // Container(
+              //   color: Colors.red,
+              // ),
               Container(
                 color: Colors.orange,
               ),
