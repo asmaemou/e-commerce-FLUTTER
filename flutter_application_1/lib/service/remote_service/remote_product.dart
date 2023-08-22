@@ -25,7 +25,8 @@ class RemoteProductService {
 
   Future<dynamic> getByCategory({required int id}) async {
     var response = await client.get(
-        Uri.parse('$remoteUrl?populate=images,tags&filters[category][id]=$id')
+      // get_products_by_categorie
+        Uri.parse('$baseUrl/get_products_by_categorie?categorie_id=$id')
     );
 
     return response;

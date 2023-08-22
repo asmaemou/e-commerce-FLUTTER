@@ -70,24 +70,33 @@ class SignInScreen extends StatelessWidget {
                 flex: 5,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text("I'm new user, "),
-                  InkWell(
-                    onTap: (){
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const SignUpScreen()));
-                    },
-                    child: const Text("Sign Up",
-                    style: TextStyle(
-                      color: Colors.blue
-                    ),),
-                  )
-                ],
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              "I'm a new user, ",
+              style: TextStyle(fontSize: 16), // Adjust the font size as needed
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SignUpScreen(),
+                  ),
+                );
+              },
+              child: const Text(
+                "Sign Up",
+                style: TextStyle(
+                  fontSize: 18, // Adjust the font size for "Sign Up"
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold, // Adding bold style for emphasis
+                ),
               ),
-              const SizedBox(height: 10)
+            ),
+          ],
+        ),
+              const SizedBox(height: 15)
             ],
           ),
         ),

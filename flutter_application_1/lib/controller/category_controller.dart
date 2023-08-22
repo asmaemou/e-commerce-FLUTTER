@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter_application_1/model/category.dart';
-import 'package:flutter_application_1/service/local_service/local_category_service.dart';
+// import 'package:flutter_application_1/service/local_service/local_category_service.dart';
 import 'package:flutter_application_1/service/remote_service/remote_category_service.dart';
 
 class CategoryController extends GetxController {
