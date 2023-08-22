@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart'; // Import the EasyLoading package
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:get/get.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:flutter_application_1/model/ad_banner.dart';
+import 'package:flutter_application_1/model/category.dart';
+import 'package:flutter_application_1/model/product.dart';
+import 'package:flutter_application_1/model/user.dart';
 import 'package:flutter_application_1/route/app_page.dart';
 import 'package:flutter_application_1/route/app_route.dart';
 import 'package:flutter_application_1/theme/app_theme.dart';
-import 'package:get/get.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-  
-  // Configure EasyLoading
-  configLoading();
-  
-  runApp(const MyApp());
-}
 
-void configLoading() {
-  EasyLoading.instance
-    ..indicatorType = EasyLoadingIndicatorType.circle
-    ..maskType = EasyLoadingMaskType.black
-    // Other configurations...
-    ..loadingStyle = EasyLoadingStyle.custom;
+  //register adapters
+  Hive.registerAdapter(AdBannerAdapter());
+  Hive.registerAdapter(CategoryAdapter());
+  Hive.registerAdapter(ProductAdapter());
+  Hive.registerAdapter(UserAdapter());
+
+  configLoading();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -35,6 +35,23 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       themeMode: ThemeMode.light,
+      builder: EasyLoading.init(),
     );
   }
+}
+
+void configLoading(){
+  EasyLoading.instance
+    ..displayDuration = const Duration(milliseconds: 2000)
+    ..indicatorType = EasyLoadingIndicatorType.fadingCircle
+    ..loadingStyle = EasyLoadingStyle.dark
+    ..indicatorSize = 45.0
+    ..radius = 10.0
+    ..progressColor = Colors.white
+    ..backgroundColor = Colors.green
+    ..indicatorColor = Colors.white
+    ..textColor = Colors.white
+    ..userInteractions = false
+    ..maskType = EasyLoadingMaskType.black
+    ..dismissOnTap = true;
 }
