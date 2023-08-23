@@ -20,8 +20,8 @@ class UserAdapter extends TypeAdapter<User> {
       id: fields[0] as String,
       fullName: fields[1] as String,
       email: fields[2] as String,
-      image: fields[3] as String?,
-      birthDay: fields[4] as DateTime?,
+      // image: fields[3] as String?,
+      // birthDay: fields[4] as DateTime?,
     );
   }
 
@@ -34,11 +34,11 @@ class UserAdapter extends TypeAdapter<User> {
       ..writeByte(1)
       ..write(obj.fullName)
       ..writeByte(2)
-      ..write(obj.email)
-      ..writeByte(3)
-      ..write(obj.image)
-      ..writeByte(4)
-      ..write(obj.birthDay);
+      ..write(obj.email);
+      // ..writeByte(3)
+      // ..write(obj.image)
+      // ..writeByte(4)
+      // ..write(obj.birthDay);
   }
 
   @override

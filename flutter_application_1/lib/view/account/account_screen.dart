@@ -32,7 +32,7 @@ class AccountScreen extends StatelessWidget {
                 children: [
                   Text(
                     authController.user.value?.fullName??"Sign in your account",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   )
                 ],
               )

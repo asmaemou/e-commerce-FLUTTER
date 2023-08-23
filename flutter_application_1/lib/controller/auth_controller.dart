@@ -45,7 +45,7 @@ class AuthController extends GetxController {
         EasyLoading.showError('Something wrong. Try againfffd!');
       }
     } catch(e){
-      EasyLoading.showError('Something wrong. Try againpppi!');
+      EasyLoading.showError('Oops Not created');
     } finally {
       EasyLoading.dismiss();
     }
