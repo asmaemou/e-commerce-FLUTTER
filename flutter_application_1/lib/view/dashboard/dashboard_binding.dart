@@ -2,6 +2,7 @@ import 'package:flutter_application_1/controller/category_controller.dart';
 import 'package:flutter_application_1/controller/dashboard_controller.dart';
 import 'package:flutter_application_1/controller/home_controller.dart';
 import 'package:flutter_application_1/controller/product_controller.dart';
+import 'package:flutter_application_1/controller/auth_controller.dart';
 import 'package:get/get.dart';
 
 class DashboardBinding extends Bindings{
@@ -11,5 +12,6 @@ class DashboardBinding extends Bindings{
     Get.put(HomeController());
     Get.put(ProductController());
     Get.put(CategoryController());
+    Get.put(AuthController());
   }
 }

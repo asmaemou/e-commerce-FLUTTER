@@ -27,24 +27,25 @@ class AuthController extends GetxController {
       var result = await RemoteAuthService().signUp(
           email: email,
           password: password,
+          fullname: fullName,
       );
       if(result.statusCode == 200) {
-        String token = json.decode(result.body)['jwt'];
-        var userResult = await RemoteAuthService().createProfile(fullName: fullName, token: token);
-        if(userResult.statusCode == 200) {
-          user.value = userFromJson(userResult.body);
-          await _localAuthService.addToken(token: token);
-          await _localAuthService.addUser(user: user.value!);
-          EasyLoading.showSuccess("Welcome to MyGrocery!");
-          Navigator.of(Get.overlayContext!).pop();
-        } else {
-          EasyLoading.showError('Something wrong. Try again!');
-        }
+        // String token = json.decode(result.body)['jwt'];
+        // var userResult = await RemoteAuthService().createProfile(fullName: fullName, token: token);
+        // var userResult = await RemoteAuthService().createProfile(fullName: fullName);
+        // if(userResult.statusCode == 200) {
+        
+        user.value = userFromJson(result.body);
+        // await _localAuthService.addToken(token: token);
+        // await _localAuthService.addUser(user: user.value!);
+        EasyLoading.showSuccess("Welcome to MyAppp!");
+        Navigator.of(Get.overlayContext!).pop();
+      
       } else {
-        EasyLoading.showError('Something wrong. Try again!');
+        EasyLoading.showError('Something wrong. Try againfffd!');
       }
     } catch(e){
-      EasyLoading.showError('Something wrong. Try again!');
+      EasyLoading.showError('Something wrong. Try againpppi!');
     } finally {
       EasyLoading.dismiss();
     }

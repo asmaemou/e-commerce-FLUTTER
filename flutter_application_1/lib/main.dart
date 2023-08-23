@@ -15,9 +15,9 @@ void main() async {
   await Hive.initFlutter();
 
   //register adapters
-  Hive.registerAdapter(AdBannerAdapter());
-  Hive.registerAdapter(CategoryAdapter());
-  Hive.registerAdapter(ProductAdapter());
+  // Hive.registerAdapter(AdBannerAdapter());
+  // Hive.registerAdapter(CategoryAdapter());
+  // Hive.registerAdapter(ProductAdapter());
   Hive.registerAdapter(UserAdapter());
 
   configLoading();

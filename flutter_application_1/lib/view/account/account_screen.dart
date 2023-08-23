@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter_application_1/controller/controllers.dart';
+import 'package:get/get.dart';
 
+// import '../../controller/controllers.dart';
+import '../../controller/controllers.dart';
 import 'auth/sign_in_screen.dart';
 
 class AccountScreen extends StatelessWidget {
@@ -13,9 +17,9 @@ class AccountScreen extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         children: [
           const SizedBox(height: 20),
-          const Row(
+          Obx(()=>Row(
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 backgroundColor: Colors.grey,
                 radius: 36,
                 child: CircleAvatar(
@@ -23,26 +27,28 @@ class AccountScreen extends StatelessWidget {
                   backgroundImage: AssetImage("user_image.png"),
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Column(
                 children: [
                   Text(
-                    "Sign in your account",
+                    authController.user.value?.fullName??"Sign in your account",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   )
                 ],
               )
             ],
           ),
+          ),
           const SizedBox(height: 50),
           buildAccountCard(
-              title: "Profile Info",
-              onClick: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const SignInScreen()));
-              }),
+            title: "Profile Info",
+            onClick: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SignInScreen()));
+            },
+          ),
           buildAccountCard(title: "Notification", onClick: () {}),
           buildAccountCard(title: "Settings", onClick: () {}),
           buildAccountCard(title: "About Us", onClick: () {}),
@@ -53,8 +59,7 @@ class AccountScreen extends StatelessWidget {
     );
   }
 
-  Widget buildAccountCard(
-      {required String title, required Function() onClick}) {
+  Widget buildAccountCard({required String title, required Function() onClick}) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 14),
       child: GestureDetector(
@@ -65,22 +70,22 @@ class AccountScreen extends StatelessWidget {
           height: 60,
           padding: const EdgeInsets.symmetric(horizontal: 20),
           decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: const BorderRadius.all(Radius.circular(12)),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.4),
-                  spreadRadius: 0.1,
-                  blurRadius: 7,
-                )
-              ]),
+            color: Colors.white,
+            borderRadius: const BorderRadius.all(Radius.circular(12)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.4),
+                spreadRadius: 0.1,
+                blurRadius: 7,
+              )
+            ],
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 title,
-                style:
-                    const TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+                style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
               ),
               const Icon(Icons.keyboard_arrow_right_outlined)
             ],
